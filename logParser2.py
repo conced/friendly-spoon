@@ -18,7 +18,7 @@ err_dict = {}
 # Number of info and err per user
 err_user = {}
 
-def populate_dict(per_err, per_user, logs):
+def populate_dicti(per_err, per_user, logs):
     with open(logs) as fd:
         for log in fd.readlines():
             m = regex.match(log)
