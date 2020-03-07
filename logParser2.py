@@ -9,7 +9,7 @@ ERROR = COUNT = 1
 
 # Path to syslog
 # syslog_path = "syslog.log"
-syslog_path = "C:\\Temp\\PythonPW7\syslog.txt"
+syslog_path = ".\syslog.txt"
 
 # regex
 regex = re.compile(r"^[a-zA-Z]{3} [\d]{1,2} [\d]{1,2}:[\d]{1,2}:[\d]{1,2} [\w.]{1,} [\w]{1,}: (?P<msgtype>[A-Z]{1,}) (?P<msg>[\w' ]{1,}) \[{0,1}#{0,1}[0-9]{0,1}[0-9]{0,1}[0-9]{0,1}[0-9]{0,1}\]{0,1}[ ]{0,1}\((?P<username>[\w.]{1,})\)")
@@ -18,7 +18,7 @@ err_dict = {}
 # Number of info and err per user
 err_user = {}
 
-def populate_dicti(per_err, per_user, logs):
+def populate_dict(per_err, per_user, logs):
     with open(logs) as fd:
         for log in fd.readlines():
             m = regex.match(log)
